@@ -43,3 +43,12 @@
 .demo-footer .mdl-mini-footer--link-list a {
   font-size: 13px;
 }
+
+.delete {
+  float: right;
+  font-weight: bold;
+  background: none;
+  font-size: 1em;
+  border: none;
+  position: relative;
+}

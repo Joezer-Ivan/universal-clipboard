@@ -17,6 +17,17 @@ if (Meteor.isClient) {
       event.target.text.value = '';
     }
   });
+  Template.snippet.events({
+    "click .delete": function(){
+      console.log("done");
+      Meteor.call("delSnip",this._id);
+    }
+  });
+ Template.afterLogIn.helpers({
+    "snippets": function(){
+      return Snippets.find({owner: Meteor.userId()});
+    }
+  });
 }
 
 Meteor.methods({
@@ -27,5 +38,8 @@ Meteor.methods({
         createdAt: new Date()
       });
 
+  },
+  delSnip: function(id){
+    Snippets.remove(id);
   }
 });

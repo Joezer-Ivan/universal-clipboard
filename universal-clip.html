@@ -45,9 +45,29 @@
       <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect" id="save" align="right">
         Save
       </button>
-    </form>
-
+    </form><br><br>
+    <table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp mdl-cell mdl-cell--12-col">
+      <tbody>
+        {{#each snippets}}
+          {{> snippet}}
+        {{/each}}
+      </tbody>
+    </table>
   </div>
+</template>
+
+<template name="snippet">
+  <tr>
+      <td class="mdl-data-table__cell--non-numeric">{{text}}</td>
+      <td>
+        <button class="delete">
+          <i class="mdi mdi-delete" id="del{{this._id}}"></i>
+          <div class="mdl-tooltip" for="del{{this._id}}">
+            <strong>delete</strong>
+          </div>
+        </button>
+      </td>
+  </tr>
 </template>
 
 <template name="beforeLogIn">
