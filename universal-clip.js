@@ -1,5 +1,5 @@
 Snippets = new Mongo.Collection("snippets");
-
+// new Clipboard('.btn');
 if (Meteor.isServer) {
 
 }
@@ -19,8 +19,10 @@ if (Meteor.isClient) {
   });
   Template.snippet.events({
     "click .delete": function(){
-      console.log("done");
       Meteor.call("delSnip",this._id);
+    },
+    "click .btn":function(){
+      new Clipboard('.btn');
     }
   });
  Template.afterLogIn.helpers({
@@ -40,6 +42,6 @@ Meteor.methods({
 
   },
   delSnip: function(id){
-    Snippets.remove(id);
+    Snippet.remove(id);
   }
 });

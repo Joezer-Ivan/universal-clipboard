@@ -59,7 +59,15 @@
 <template name="snippet">
   <tr>
       <td class="mdl-data-table__cell--non-numeric">{{text}}</td>
-      <td>
+      <td style="width:10px">
+        <button class="btn" data-clipboard-text="{{text}}">
+          <i class="mdi mdi-clipboard" id="clip{{this._id}}"></i>
+          <div class="mdl-tooltip" for="clip{{this._id}}">
+            <strong>Copy to Clipboard</strong>
+          </div>
+        </button>
+      </td>
+      <td style="width:10px">
         <button class="delete">
           <i class="mdi mdi-delete" id="del{{this._id}}"></i>
           <div class="mdl-tooltip" for="del{{this._id}}">

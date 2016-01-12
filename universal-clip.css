@@ -44,7 +44,7 @@
   font-size: 13px;
 }
 
-.delete {
+button {
   float: right;
   font-weight: bold;
   background: none;
